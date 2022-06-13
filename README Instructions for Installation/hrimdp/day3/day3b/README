@@ -1,0 +1,154 @@
+
+###### Things to do: ######
+
+############################################################
+1. Only for the world_room map (provided), handcraft 2 different human_actions_hand.csv with meaningful interactions: e.g., smart navigation using world_room.csv
+
+2. Complete function random_actions in random_human_actions.py
+
+3. For each of the 3 environments (provided; world_XXXX), randomly generate 2 human_actions_random.csv
+
+4. Observe the interactions between the human and robot within the various worlds as well as based on the various human action sets
+############################################################
+
+
+############################################################
+###### CRAFTED HUMAN ACTIONS 1 ######
+
+*First, create an action set with meaning navigation named human_a_h1.csv designed for the world room map
+
+Hint: Open (with gedit) to view the world_room.csv file. Assuming the human starts at [0,0] (i.e. top left corner of the map), you can plan the actions by editing the human_a_h0.csv template given by "moving" the human (using the S, R, L, U, D keys) through the zeros (i.e. the empty spaces) in the map. You may include the T key (i.e. Toggle Request key) at your preference in between the actions.
+
+## world room
+python3 human_execute.py world_room.csv human_a_h1.csv 0 0 1 human_s_h1.csv
+
+python3 planner.py world_room.csv human_s_h1.csv 10 9 robot_s_h1.csv
+
+python3 visualizer.py world_room.csv human_s_h1.csv robot_s_h1.csv
+
+
+###### CRAFTED HUMAN ACTIONS 2 ######
+
+*First, create another action set with meaning navigation named human_a_h2.csv designed for the world room map. Ensure that it is different from the set: human_a_h1.csv
+
+## world room
+python3 human_execute.py world_room.csv human_a_h2.csv 0 0 1 human_s_h2.csv
+
+python3 planner.py world_room.csv human_s_h2.csv 10 9 robot_s_h2.csv
+
+python3 visualizer.py world_room.csv human_s_h2.csv robot_s_h2.csv
+
+############################################################
+
+
+
+############################################################
+###### RANDOM HUMAN ACTIONS 1 ######
+
+## Generate the 1st random set of human actions
+
+python3 random_human_actions.py 10 100 human_a_r1.csv
+
+
+## world room
+python3 human_execute.py world_room.csv human_a_r1.csv 0 0 1 human_s_w11.csv
+
+python3 planner.py world_room.csv human_s_w11.csv 10 9 robot_s_w11.csv
+
+python3 visualizer.py world_room.csv human_s_w11.csv robot_s_w11.csv
+
+
+## world maze
+python3 human_execute.py world_maze.csv human_a_r1.csv 0 0 1 human_s_w21.csv
+
+python3 planner.py world_maze.csv human_s_w21.csv 10 9 robot_s_w21.csv
+
+python3 visualizer.py world_maze.csv human_s_w21.csv robot_s_w21.csv
+
+
+## world twist
+python3 human_execute.py world_twist.csv human_a_r1.csv 0 0 1 human_s_w31.csv
+
+python3 planner.py world_twist.csv human_s_w31.csv 10 9 robot_s_w31.csv
+
+python3 visualizer.py world_twist.csv human_s_w31.csv robot_s_w31.csv
+
+############################################################
+Optional Worlds:
+
+## world customized 1
+python3 human_execute.py world_cust1.csv human_a_r1.csv 0 0 1 human_s_w41.csv
+
+python3 planner.py world_cust1.csv human_s_w41.csv 0 39 robot_s_w41.csv
+
+python3 visualizer.py world_cust1.csv human_s_w41.csv robot_s_w41.csv
+
+
+## world customized 2
+python3 human_execute.py world_cust2.csv human_a_r1.csv 0 0 1 human_s_w51.csv
+
+python3 planner.py world_cust2.csv human_s_w51.csv 19 19 robot_s_w51.csv
+
+python3 visualizer.py world_cust2.csv human_s_w51.csv robot_s_w51.csv
+
+############################################################
+############################################################
+
+
+
+############################################################
+###### RANDOM HUMAN ACTIONS 2 ######
+
+## Generate the 2nd random set of human actions
+
+python3 random_human_actions.py 10 100 human_a_r2.csv
+
+
+## world room
+
+python3 human_execute.py world_room.csv human_a_r2.csv 0 0 1 human_s_w12.csv
+
+python3 planner.py world_room.csv human_s_w12.csv 10 9 robot_s_w12.csv
+
+python3 visualizer.py world_room.csv human_s_w12.csv robot_s_w12.csv
+
+
+## world maze
+python3 human_execute.py world_maze.csv human_a_r2.csv 0 0 1 human_s_w22.csv
+
+python3 planner.py world_maze.csv human_s_w22.csv 10 9 robot_s_w22.csv
+
+python3 visualizer.py world_maze.csv human_s_w22.csv robot_s_w22.csv
+
+
+## world twist
+python3 human_execute.py world_twist.csv human_a_r2.csv 0 0 1 human_s_w32.csv
+
+python3 planner.py world_twist.csv human_s_w32.csv 10 9 robot_s_w32.csv
+
+python3 visualizer.py world_twist.csv human_s_w32.csv robot_s_w32.csv
+
+############################################################
+
+Optional Worlds:
+
+## world customized 1
+python3 human_execute.py world_cust1.csv human_a_r2.csv 0 0 1 human_s_w42.csv
+
+python3 planner.py world_cust1.csv human_s_w42.csv 0 39 robot_s_w42.csv
+
+python3 visualizer.py world_cust1.csv human_s_w42.csv robot_s_w42.csv
+
+
+## world customized 2
+python3 human_execute.py world_cust2.csv human_a_r2.csv 0 0 1 human_s_w52.csv
+
+python3 planner.py world_cust2.csv human_s_w52.csv 19 19 robot_s_w52.csv
+
+python3 visualizer.py world_cust2.csv human_s_w52.csv robot_s_w52.csv
+
+############################################################
+############################################################
+
+
+

@@ -1,0 +1,11 @@
+
+
+1. Complete function robot_execute_under_policy in planner.py
+
+2. Test complete run on GridWorld
+
+> python3 human_execute.py world1.csv human_a.csv 2 3 1 human_s.csv
+
+> python3 planner.py world1.csv human_s.csv 0 0 robot_s.csv
+
+> python3 visualizer.py world1.csv human_s.csv robot_s.csv
