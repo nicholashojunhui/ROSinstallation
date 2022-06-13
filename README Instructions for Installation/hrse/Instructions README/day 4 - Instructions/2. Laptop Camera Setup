@@ -1,0 +1,28 @@
+Setup Instructions 
+
+########### TO BE DONE IN WINDOWS Command Prompt ###########
+
+These instructions are required only if you are using Virtual Box, to allow you to use your webcam on the Virtual Machine. If you are using dual boot, please skip these steps.
+
+1. On WINDOWS Command Prompt (search command prompt in search bar in your WINDOWS platform), type the following:
+
+cd c:\Program Files\Oracle\VirtualBox
+
+2. Next, type the following to list the available cameras
+
+VBoxManage List webcams
+
+Take note of the camera that you desire to use (e.g. .1 or .2, etc)
+
+3. Next, type the following to attach webcam(s) you want to use on your Virtual Machine.
+
+VboxManage controlvm "Ubuntu 16.04" webcam attach .X
+
+### Change "X" to the camera no. that you are using! ###
+
+*Note that you have to attach the webcam(s) each time you boot your Ubuntu system on the virtual machine
+
+4. You may check if the procedures are done properly by searching on Ubuntu for Cheese Webcam Booth application; open it and see if your webcam can be used
+
+
+

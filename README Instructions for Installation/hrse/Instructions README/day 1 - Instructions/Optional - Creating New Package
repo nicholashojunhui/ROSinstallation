@@ -1,0 +1,19 @@
+
+1. Change to the source space directory of the catkin workspace:
+
+$ cd ~/catkin_ws/src
+
+2. Use the catkin_create_pkg script to create a new package
+called ‘new_package' which depends on std_msgs, roscpp, and rospy:
+
+$ catkin_create_pkg new_package std_msgs rospy roscpp
+
+3. Build the packages in the catkin workspace:
+
+$ cd ~/catkin_ws
+$ catkin_make
+
+4. Add the workspace to your ROS environment by sourcing the
+generated setup file:
+
+$ . ~/catkin_ws/devel/setup.bash

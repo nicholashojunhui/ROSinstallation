@@ -1,0 +1,15 @@
+Setup Instructions
+
+1. Go to https://thingspeak.com/ to create Channel and the required details (e.g. field section) in the created Channel
+
+2. Take note of the Channel ID and the Write API Key; you may want to copy and paste these details into the notepad first
+
+3. install the Paho client library. In terminal, type:
+
+$ sudo pip install paho-mqtt
+
+If the above command lines cannot work, type:
+$ sudo pip uninstall paho-mqtt
+$ git clone https://github.com/eclipse/paho.mqtt.python
+$ cd paho.mqtt.python
+$ sudo python setup.py install

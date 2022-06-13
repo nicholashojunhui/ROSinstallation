@@ -1,0 +1,66 @@
+#####################################################################################
+Ensure that your workshop materials have been submitted first before trying this out!
+#####################################################################################
+#################### Command Execution Sequence Instructions ########################
+
+1. Do the OpenCR Setup (if have not done so)
+
+(A) On the Remote PC, open new terminal and type the following commands to access TB3 PC:
+
+$ ssh pi@192.168.XX.XX
+
+You will see that the Remote PC will log into the Raspberry Pi which is the TB3 PC
+
+(B) On the TB3 PC, type the following commands in order to upload the firmware to the OpenCR
+
+$ export OPENCR_PORT=/dev/ttyACM0
+
+$ export OPENCR_MODEL=waffle
+
+$ rm -rf ./opencr_update.tar.bz2
+
+$ wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS1/latest/opencr_update.tar.bz2 && tar -xvf opencr_update.tar.bz2 && cd ./opencr_update && ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr && cd ..
+
+#####################################################################################
+
+2. Run roscore and do bring up procedures
+
+(A) On the Remote PC, run roscore (Important: do NOT run roscore under the TB3 PC!!!)
+
+$ roscore
+
+(B) On the Remote PC, open new terminal and type the following commands to access TB3 PC:
+
+$ ssh pi@192.168.XX.XX
+
+You will see in this terminal that you are connected to the pi’s terminal
+
+(C) On the TB3 PC (using the linked pi terminal), type the following to bring up basic packages to start TB3:
+
+$ roslaunch turtlebot3_bringup turtlebot3_robot.launch
+
+(D) On the Remote PC, open new terminal and type the following commands to access TB3 PC:
+
+$ ssh pi@192.168.XX.XX
+
+(E) Activate rpicamera (Optional for Project1.py)
+
+$ roslaunch turtlebot3_bringup turtlebot3_rpicamera.launch
+
+#####################################################################################
+
+3. Run node that send required data to your ThingSpeak Channel
+
+	$ rosrun hrse Project1.py
+
+*ensure that your python codes are in the src folder of your hrse package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x Project1.py)
+
+4. Check if your ThingSpeak Channel receives the data from your running node
+
+5. Move the TB3 around the map using the Teleop key node
+
+	$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+6. Observe the collected data in your ThingSpeak Channel. It should change as you move the TB3 around the map
+

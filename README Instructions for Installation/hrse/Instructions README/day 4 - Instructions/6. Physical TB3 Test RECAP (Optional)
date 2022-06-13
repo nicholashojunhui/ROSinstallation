@@ -1,0 +1,73 @@
+#####################################################################################
+Ensure that your workshop materials have been submitted first before trying this out!
+Ensure that your Project4.py work for the virtual system first!!!
+#####################################################################################
+#################### Command Execution Sequence Instructions ########################
+
+1. Do the OpenCR Setup (if have not done so)
+
+(A) On the Remote PC, open new terminal and type the following commands to access TB3 PC:
+
+$ ssh pi@192.168.XX.XX
+
+You will see that the Remote PC will log into the Raspberry Pi which is the TB3 PC
+
+(B) On the TB3 PC, type the following commands in order to upload the firmware to the OpenCR
+
+$ export OPENCR_PORT=/dev/ttyACM0
+
+$ export OPENCR_MODEL=waffle
+
+$ rm -rf ./opencr_update.tar.bz2
+
+$ wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS1/latest/opencr_update.tar.bz2 && tar -xvf opencr_update.tar.bz2 && cd ./opencr_update && ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr && cd ..
+
+#####################################################################################
+
+2. Run roscore and do bring up procedures
+
+(A) On the Remote PC, run roscore (Important: do NOT run roscore under the TB3 PC!!!)
+
+$ roscore
+
+(B) On the Remote PC, open new terminal and type the following commands to access TB3 PC:
+
+$ ssh pi@192.168.XX.XX
+
+You will see in this terminal that you are connected to the pi’s terminal
+
+(C) On the TB3 PC (using the linked pi terminal), type the following to bring up basic packages to start TB3:
+
+$ roslaunch turtlebot3_bringup turtlebot3_robot.launch
+
+(D) On the Remote PC, open new terminal and type the following commands to access TB3 PC:
+
+$ ssh pi@192.168.XX.XX
+
+(E) Activate rpicamera (Optional for Project1.py)
+
+$ roslaunch turtlebot3_bringup turtlebot3_rpicamera.launch
+
+#####################################################################################
+
+3. Run node that allows you to use finger gestures to control the TB3 while also enabling the TB3 to avoid obstacles
+
+	$ rosrun hrse Project4.py
+
+*ensure that your python codes are in the src folder of your hrse package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x Project1.py)
+
+4. Adjust camera until the bounding box is within blue background
+
+5. Change your finger gestures into 1, 2, 3 or 4 as illustrated in the demo or pictures; 1, 2, 3, 4 are represented by the following controls: 
+
+	1 = Forward, 
+	2 = Left (Counterclockwise), 
+	3 = Right (Clockwise), 
+	4 = Backwards, 
+	No Input = Brake
+
+6. Check if the node enables the TB3 to avoid obstacles when you went out of control or when the MV has inaccurate identifications
+
+***Note that a blue background is strongly recommended for the MV algorithms to work properly
+
