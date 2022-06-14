@@ -1,6 +1,6 @@
 Check if you have pytest. Install it if you do not have
-$ pytest --version
-$ pip3 install pytest
+$ sudo pytest --version
+$ sudo pip3 install pytest
 
 
 1. Verify installation, pytest is needed
