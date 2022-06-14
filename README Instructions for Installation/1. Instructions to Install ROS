@@ -7,6 +7,9 @@ Type line by line, in a terminal:
 
 $ sudo apt-get update
 
+if update fails due to key expiry,type
+$ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
 $ sudo apt-get upgrade
 
 $ wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_kinetic.sh
