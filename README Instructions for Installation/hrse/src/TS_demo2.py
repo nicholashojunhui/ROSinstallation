@@ -39,6 +39,10 @@ apiKey = "XXXXXXXXXXXXXXXXXXXXX"
 # This type of unsecured MQTT connection uses the least amount of system resources.
 useUnsecuredTCP = True
 
+# Set useSecuredTCP to True to use the default MQTT port of 8883
+# This type of unsecured MQTT connection uses the least amount of system resources.
+useSecuredTCP = False
+
 # Set useUnsecuredWebSockets to True to use MQTT over an unsecured websocket on port 80.
 # Try this if port 1883 is blocked on your network.
 useUnsecuredWebsockets = False
@@ -57,6 +61,11 @@ mqttHost = "mqtt.thingspeak.com"
 if useUnsecuredTCP:
 	tTransport = "tcp"
 	tPort = 1883
+	tTLS = None
+
+if useSecuredTCP:
+	tTransport = "tcp"
+	tPort = 8883
 	tTLS = None
 
 if useUnsecuredWebsockets:
