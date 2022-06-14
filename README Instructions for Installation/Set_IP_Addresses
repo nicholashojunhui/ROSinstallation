@@ -6,7 +6,7 @@ For Master IPs (PCs; Ubuntu)
 - Set DNS servers as: 8.8.8.8
 
 
-For Slave IPs (TB3)
+For Slave IPs (Raspberry Pi in TB3)
 - check whether DHCPCD is already activated using the following command:
 $ sudo service dhcpcd status
 
