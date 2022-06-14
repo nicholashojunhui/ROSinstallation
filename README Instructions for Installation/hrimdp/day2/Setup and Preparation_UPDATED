@@ -23,8 +23,11 @@ For python3
 (a) check if python3.6 or above is installed
 $ python3 -V
 
-(b) if not, install python3.6; follow instructions from source:
+(b) if not, install python3.6; follow instructions from source (Follow Method 1):
 https://moreless.medium.com/install-python-3-6-on-ubuntu-16-04-28791d5c2167
+
+For python3.7 (Optional; Follow Method 2), though python3.6 is sufficient:
+https://hackthestuff.com/article/how-to-install-python-3-7-in-ubuntu
 
 ###########################################################################
 
@@ -34,15 +37,15 @@ $ sudo apt-get install python3-pip
 ###########################################################################
 
 Check and install pytest:
-$ pytest --version
-$ pip3 install pytest
-$ py.test -h
+$ sudo pytest --version
+$ sudo pip3 install pytest
+$ sudo py.test -h
 
 ###########################################################################
 
 Check and install pygame:
 $ sudo pip3 install pygame
-$ pip show pygame
+$ sudo pip3 show pygame
 
 If the above command line doesn't work, try the below lines:
 $ sudo apt install python3-setuptools
