@@ -25,4 +25,6 @@ $ git clone https://github.com/ROBOTIS-GIT/robotis_manipulator.git
 
 $ cd ~/catkin_ws && catkin_make
 
-
+Optional (if the following 3 packages compile successfully):
+$ sudo apt-get install ros-kinetic-dynamixel-sdk ros-kinetic-dynamixel-workbench*
+$ sudo apt-get install ros-kinetic-robotis-manipulator
