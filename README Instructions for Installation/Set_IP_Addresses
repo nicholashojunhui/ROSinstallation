@@ -1,6 +1,6 @@
 For Master IPs (PCs; Ubuntu)
 - Connect wifi and go to "Edit Connections"
-- Set IP address: 192.168.XX.XXX
+- Set IP address: 192.168.8.XXX
 - Set Netmask: 24
 - Set Gateway: 192.168.8.1
 - Set DNS servers as: 8.8.8.8
