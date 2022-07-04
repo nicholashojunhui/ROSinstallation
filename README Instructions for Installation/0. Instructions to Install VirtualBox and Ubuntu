@@ -1,0 +1,44 @@
+Getting started with Ubuntu 16.04 in VirtualBox
+*Note that for this course, we will be using ROS Kinetic, which is deemed more stable and more established as compared to other versions when using the TB3 and OM systems. Hence, please take note that it is strictly required to install Ubuntu version 16.04, as this version can better support ROS Kinetic.
+
+VirtualBox installation
+1.	First we need to download VirtualBox (v6.1.4; to be safe) from  https://www.virtualbox.org/wiki/Download_Old_Builds_6_1 
+2.	Run the executable and follow the prompts to complete the installation.
+
+
+
+Create an Ubuntu virtual machine
+1.	Download the latest Ubuntu release from http://releases.ubuntu.com/16.04/?_ga=2.245247622.286617492.1585822024-1634746839.1585822024. Download Ubuntu version 16.04.6 LTS (Xenial Xerus); click on 64-bit PC (AMD64) desktop image to download desktop image
+2.	Open VirtualBox and click New
+3.	Type the Name for the virtual machine, like Ubuntu 16. VirtualBox will try to predict the Type and Version based on the name you enter. Otherwise, select:
+•	Type: Linux
+•	Version: Ubuntu (64-bit)
+and click Next.
+4.	Next we need to specify how much memory to allocate the virtual machine. According to the Ubuntu system requirements we need 2GB, but I’d recommend more if your host can handle it. Basically the higher you can set the memory without severely impacting your host machine, the better the performance of the guest machine. If you’re not sure, stick with 2048MB (i.e. 2 GB)
+5.	On the Hardware screen select Create a virtual hard disk now and click Create
+6.	Accept the default option VDI for Hard disk file type and click Next
+7.	Next we are prompted for Storage on physical hard disk. The options are Dynamically allocated and Fixed size. We’ll use the default of Dynamically allocated. Click Next
+8.	Choose the hard disk size and storage location. The Ubuntu system requirements recommend 25GB; change to 25GB. Remember, we choose Dynamically allocated as our storage option in the last step, so we won’t consume all this disk space immediately. Rather, VirtualBox will allocate it as required, up to the maximum 25GB we specified. Click Create
+9.	The wizard will finish and we are returned to the main VirtualBox window. Click Settings
+10.	In the left pane select Storage, then in the right select the CD icon with the word Empty beside it
+11.	Under Attributes click the CD icon and select Choose a disk file and browse to the downloaded file ubuntu-16.04.6-desktop-amd64.iso
+12.	Click OK to close the Settings dialog window. The virtual machine should now be ready to start
+
+
+
+Install Ubuntu
+In VirtualBox your VM should be showing as Powered Off, and the optical drive configured to point to the Ubuntu ISO file we downloaded previously.
+1.	In VirtualBox, click Start. VirtualBox will launch a new window with the vm and boot from the iso
+2.	Click Start and you will be taken to an installation window
+3.	Click Install Ubuntu
+4.	Select Download updates while installing Ubuntu and click Continue
+5.	On the next screen accept the default of Erase disk and install Ubuntu and click Install Now
+6.	You will be prompted with a warning saying the changes will be written to disk. Click Continue
+7.	Select your timezone and click Continue
+8.	Select your keyboard layout. I accepted the default of English (US) and click Continue
+9.	Enter a username and password, then click Continue
+10.	The Ubuntu installation may take several minutes to run
+11.	When the installation is finished you will be prompted to restart. Save and close anything else you may have open and click Restart Now
+12.	When the vm reboots, press Enter in the vm to proceed
+13.	If all went well the VM should boot to the Ubuntu login screen. Enter your password to continue
+14.	Ubuntu should run normally in the VirtualBox environment. If everything is far too small, you can adjust the screen by selecting View > Scaled Mode
