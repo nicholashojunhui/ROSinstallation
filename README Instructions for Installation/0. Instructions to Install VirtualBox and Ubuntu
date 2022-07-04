@@ -1,4 +1,4 @@
-Getting started with Ubuntu 16.04 in VirtualBox
+Getting started with Ubuntu 16.04 in VirtualBox (Only for those without dual boot!)
 *Note that for this course, we will be using ROS Kinetic, which is deemed more stable and more established as compared to other versions 
 when using the TB3 and OM systems. Hence, please take note that it is strictly required to install Ubuntu version 16.04, as this version 
 can better support ROS Kinetic.
