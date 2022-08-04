@@ -34,6 +34,7 @@ Note that this installation is for Leap Motion Controller to be used for Ubuntu 
 7. Still using the terminal, execute the two commands from that same terminal:
 
    $ sudo ln -s /lib/systemd/system/leapd.service
+   $ sudo ln -s /lib/systemd/system/leapd.service /etc/systemd/system/leapd.service
    $ sudo systemctl daemon-reload
 
 8. All is right now and we can properly install. Open terminal, change directory and run the following command:
