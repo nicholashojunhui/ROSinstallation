@@ -40,7 +40,7 @@ Note that this installation is for Leap Motion Controller to be used for Ubuntu 
 
    $ sudo dpkg --install Leap-2.3.1+31549-x64.deb
 
-9. Ensure Step 8 is completed without errors first. Once done, go to the leap_motion package under the src folder. Click on LeapSDK -> Lib.
+9. Ensure Step 8 is completed without errors first. Once done, go to the folder that was unzip in Step 2. Click on LeapSDK -> Lib.
 
    There are 3 files involved in the next step. They are:
    - Leap.py
