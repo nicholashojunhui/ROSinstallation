@@ -20,14 +20,14 @@ Note that this installation is for Leap Motion Controller to be used for Ubuntu 
    
 5. Copy and paste the below in the nano editor:
 
-[Unit]
-Description=LeapMotion Daemon
-After=syslog.target
-[Service]
-Type=simple
-ExecStart=/usr/sbin/leapd
-[Install]
-WantedBy=multi-user.target
+   [Unit]
+   Description=LeapMotion Daemon
+   After=syslog.target
+   [Service]
+   Type=simple
+   ExecStart=/usr/sbin/leapd
+   [Install]
+   WantedBy=multi-user.target
 
 6. After which, save contents (CTRL+O then ENTER), and exit (CTRL+X)
 
