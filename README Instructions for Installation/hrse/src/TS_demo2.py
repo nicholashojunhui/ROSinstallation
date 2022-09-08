@@ -7,6 +7,7 @@
 from __future__ import print_function
 import paho.mqtt.publish as publish
 import psutil
+import thingspeak
 from time import sleep
 from math import isnan
 
@@ -32,56 +33,9 @@ channelID = "1111205"
 # Replace this with your Write API key
 apiKey = "XXXXXXXXXXXXXXXXXXXXX"
 
-
-#  MQTT Connection Methods
-
-# Set useUnsecuredTCP to True to use the default MQTT port of 1883
-# This type of unsecured MQTT connection uses the least amount of system resources.
-useUnsecuredTCP = True
-
-# Set useSecuredTCP to True to use the default MQTT port of 8883
-# This type of unsecured MQTT connection uses the least amount of system resources.
-useSecuredTCP = False
-
-# Set useUnsecuredWebSockets to True to use MQTT over an unsecured websocket on port 80.
-# Try this if port 1883 is blocked on your network.
-useUnsecuredWebsockets = False
-
-# Set useSSLWebsockets to True to use MQTT over a secure websocket on port 443.
-# This type of connection will use slightly more system resources, but the connection
-# will be secured by SSL.
-useSSLWebsockets = False
+channel = thingspeak.Channel(id=channelID, api_key=apiKey)
 
 #####   End of user configuration   #####
-
-# The Hostname of the ThinSpeak MQTT service
-mqttHost = "mqtt.thingspeak.com"
-
-# Set up the connection parameters based on the connection type
-if useUnsecuredTCP:
-	tTransport = "tcp"
-	tPort = 1883
-	tTLS = None
-
-if useSecuredTCP:
-	tTransport = "tcp"
-	tPort = 8883
-	tTLS = None
-
-if useUnsecuredWebsockets:
-	tTransport = "websockets"
-	tPort = 80
-	tTLS = None
-
-if useSSLWebsockets:
-	import ssl
-	tTransport = "websockets"
-	tTLS = {'ca_certs':"/etc/ssl/certs/ca-certificates.crt",'tls_version':ssl.PROTOCOL_TLSv1}
-	tPort = 443
-
-
-# Create the topic string
-topic = "channels/" + channelID + "/publish/" + apiKey
 
 
 ###### Start of functions ######
@@ -125,12 +79,7 @@ while not rospy.is_shutdown():
 
 	##### Send laserdata to ThingSpeak #####
 
-	# build the payload string
-	tPayload = "field1=" + str(data1) + "&field2=" + str(data2) + "&field3=" + str(data3) + "&field4=" + str(data4) + "&field5=" + str(data5) + "&field6=" + str(data6)
-
-
-	# attempt to publish this data to the topic 
-	publish.single(topic, payload=tPayload, hostname=mqttHost, port=tPort, tls=tTLS, transport=tTransport)
+	channel.update({'field1': str(data1), 'field2': str(data2), 'field3': str(data3), 'field4': str(data4), 'field5': str(data5), 'field6': str(data6)})
 
 	###################################
 
