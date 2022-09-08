@@ -9,3 +9,32 @@ Setup Instructions
 $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo pip install thingspeak
+$ sudo pip install requests
+
+##############################################################################################################################
+If pip is not installed, follow the following steps and try the above commands again to install thingspeak:
+(i) Download the get-pip.py file from https://bootstrap.pypa.io/get-pip.py
+(ii) In terminal, type command:
+$ curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+
+(iii) Once done, type command to install pip:
+$ sudo python get-pip.py
+
+##############################################################################################################################
+##############################################################################################################################
+If the above still has errors, try the following instead:
+(i) Go to the website https://pypi.org/project/thingspeak/#files and download the thingspeak zip file (.tar.gz). Extract the files.
+
+(ii) Change directory to the thingspeak folder
+$ cd /pathdirectory
+
+(iii) Run the setup.py file using the below command:
+$ sudo python setup.py install
+
+(iv) Go to the website https://pypi.org/project/requests/#files and download the requests zip file (.tar.gz). Extract the files.
+
+(v) Change directory to the request folder
+$ cd /pathdirectory
+
+(vi) Run the setup.py file using the below command:
+$ sudo python setup.py install
