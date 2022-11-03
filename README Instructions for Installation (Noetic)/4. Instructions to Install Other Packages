@@ -1,0 +1,54 @@
+
+Instructions for Other Packages Setup
+
+The next step is to install other necessary packages on Remote PC:
+
+
+(A-1) Installing Simulation Packages for TB3 on Remote PC
+
+$ cd ~/catkin_ws/src/
+
+$ git clone -b kinetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+
+$ cd ~/catkin_ws && catkin_make
+
+(A-2) Installing other SLAM packages for TB3 on Remote PC
+
+$ sudo apt-get install ros-kinetic-frontier-exploration ros-kinetic-navigation-stage
+
+(B) Installing Manipulation Packages for TB3 on Remote PC
+
+$ cd ~/catkin_ws/src/
+
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_manipulation.git
+
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_manipulation_simulations.git
+
+$ sudo apt install ros-kinetic-ros-control* && ros-kinetic-control* && ros-kinetic-moveit*
+
+$ cd ~/catkin_ws && catkin_make
+
+
+(C) Installing AutoRace and Other Dependent Packages for TB3 on Remote PC 
+
+$ cd ~/catkin_ws/src/
+
+$ git clone https://github.com/ROBOTIS-GIT/turtlebot3_autorace.git
+
+$ cd ~/catkin_ws && catkin_make
+
+$ sudo apt-get install ros-kinetic-image-transport ros-kinetic-cv-bridge ros-kinetic-vision-opencv python-opencv libopencv-dev ros-kinetic-image-proc
+
+
+####################################################################################
+Upgrading Gazebo to version 7.16
+
+Follow the following steps to update your Gazebo to version 7.16.0:
+
+$ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+
+$ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+
+$ sudo apt-get update
+
+$ sudo apt-get install gazebo7 -y

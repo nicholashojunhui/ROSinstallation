@@ -1,0 +1,33 @@
+
+Instructions for ROS and Relevant Packages Setup
+
+The following script will allow you to simplify the ROS installation procedure. Run the following command in a terminal window. The terminal application can be found with the Ubuntu search icon on the top left corner of the screen, or you can use shortcut key for terminal is Ctrl - Alt - T . After install ROS, please reboot Remote PC.
+
+Type line by line, in a terminal:
+
+$ sudo apt-get update
+
+if update fails due to key expiry,type
+$ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+To Sync Timezone:
+$ sudo timedatectl set-timezone Asia/Singapore
+
+$ sudo apt-get upgrade
+
+$ wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_kinetic.sh
+
+$ chmod 755 ./install_ros_kinetic.sh 
+
+$ bash ./install_ros_kinetic.sh
+
+##################################################
+
+*Note that if sudo upgrade cannot work, type command:
+$ sudo rm /var/lib/apt/lists/lock
+$ sudo rm /var/cache/apt/archives/lock
+$ sudo rm /var/lib/dpkg/lock
+$ sudo dpkg --configure -a
+
+*Note that if bash cannot work, type command:
+$ /bin/cp /etc/skel/.bashrc ~/
