@@ -3,18 +3,22 @@ Instructions for Other Packages Setup
 
 The next step is to install other necessary packages on Remote PC:
 
-
+##############################################################################################
+##############################################################################################
 (A-1) Installing Simulation Packages for TB3 on Remote PC
 
 $ cd ~/catkin_ws/src/
 
-$ git clone -b kinetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+$ git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 
 $ cd ~/catkin_ws && catkin_make
 
 (A-2) Installing other SLAM packages for TB3 on Remote PC
 
-$ sudo apt-get install ros-kinetic-frontier-exploration ros-kinetic-navigation-stage
+$ sudo apt-get install ros-noetic-frontier-exploration ros-kinetic-navigation-stage
+
+##############################################################################################
+##############################################################################################
 
 (B) Installing Manipulation Packages for TB3 on Remote PC
 
@@ -24,10 +28,15 @@ $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_manipulation.git
 
 $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_manipulation_simulations.git
 
-$ sudo apt install ros-kinetic-ros-control* && ros-kinetic-control* && ros-kinetic-moveit*
+$ sudo apt install ros-noetic-ros-control* ros-noetic-control* ros-noetic-moveit*
 
 $ cd ~/catkin_ws && catkin_make
 
+If you did not clone open_manipulator_dependencies previously, then include the following too:
+$ git clone https://github.com/ROBOTIS-GIT/open_manipulator_dependencies.git
+
+##############################################################################################
+##############################################################################################
 
 (C) Installing AutoRace and Other Dependent Packages for TB3 on Remote PC 
 
