@@ -1,3 +1,0 @@
-If you have a robot export issue, in terminal, type:
-
-$ echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
