@@ -1,0 +1,53 @@
+
+##################################################
+Test ROS:
+
+Open a new terminal window (Ctrl + Alt + t) and enter:
+$ roscore
+
+Open new terminal and run turtlesim_node in the turtlesim package:
+$ rosrun turtlesim turtlesim_node
+
+Open new terminal and run turtle_teleop_key node in the turtlesim package:
+$ rosrun turtlesim turtle_teleop_key
+
+###########################################################################
+Test OM:
+
+Loading OM in Empty World; type command in terminal:
+$ roslaunch open_manipulator_gazebo open_manipulator_gazebo.launch
+
+Second, launch controller node in a new terminal:
+$ roslaunch open_manipulator_controller open_manipulator_controller.launch use_platform:=false
+
+Third, launch GUI node in a new terminal:
+$ roslaunch open_manipulator_control_gui open_manipulator_control_gui.launch
+
+				OR
+
+Third, launch teleop node in a new terminal:
+$ roslaunch open_manipulator_teleop open_manipulator_teleop_keyboard.launch
+
+###########################################################################
+Test TB3:
+
+First, launch Gazebo in TurtleBot3 World:
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+Second, launch SLAM node in a new terminal:
+$ roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+
+Third, launch teleop node in a new terminal:
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+###########################################################################
+Test TB3 with OM:
+
+First, launch Gazebo in TurtleBot3 World:
+$ roslaunch turtlebot3_manipulation_gazebo turtlebot3_manipulation_gazebo.launch
+
+Second, launch move_group node in a new terminal:
+$ roslaunch turtlebot3_manipulation_moveit_config move_group.launch
+
+Third, launch GUI Controller node in a new terminal:
+$ roslaunch turtlebot3_manipulation_gui turtlebot3_manipulation_gui.launch
