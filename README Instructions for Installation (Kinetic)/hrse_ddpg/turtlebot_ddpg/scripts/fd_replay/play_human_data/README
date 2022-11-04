@@ -1,0 +1,64 @@
+Instructions for Activating Learning from Human Player
+
+######################################################################################
+######################################################################################
+
+Human player data collection process:
+
+1. Launch the TB3 in the Gazebo world
+
+$ roslaunch turtlebot_ddpg turtlebot3_empty_world.launch world_file:='/home/nicho/catkin_ws/src/hrse_ddpg/turtlebot_ddpg/worlds/turtlebot3_modified_corridor2.world'
+
+2. Run following command first to prepare human player data collection process
+
+$ rosrun turtlebot_ddpg ddpg_record_data.py
+
+3. Run following teleop key command to manually move the robot to the destination without colliding with any obstacles; repeat the process for at least 30 mins
+
+$ rosrun turtlebot3_teleop turtlebot3_teleop_key
+
+######################################################################################
+######################################################################################
+
+Once done with the human player data collection, perform training by:
+
+1. Launch the TB3 in the Gazebo world
+
+$ roslaunch turtlebot_ddpg turtlebot3_empty_world.launch world_file:='/home/nicho/catkin_ws/src/hrse_ddpg/turtlebot_ddpg/worlds/turtlebot3_modified_corridor2.world'
+
+2. Under ddpg_network_turtlebot3_amcl_fd_replay_human.py file,
+
+Change train_indicator to '1'
+
+3. Run following command to train the network based on the human inputs
+
+$ rosrun turtlebot_ddpg ddpg_network_turtlebot3_amcl_fd_replay_human.py
+
+######################################################################################
+######################################################################################
+
+Once training is done, test the model:
+
+1. Launch the TB3 in the Gazebo world
+
+$ roslaunch turtlebot_ddpg turtlebot3_empty_world.launch world_file:='/home/nicho/catkin_ws/src/hrse_ddpg/turtlebot_ddpg/worlds/turtlebot3_modified_corridor2.world'
+
+2. Under ddpg_network_turtlebot3_amcl_fd_replay_human.py file,
+
+Change train_indicator to '0'
+
+3. Under if train_indicator==0 condition,
+
+Change the paths of actor_critic.actor_model.load_weights and actor_critic.critic_model.load_weights to the correct ones; depends on your username and ideal model
+
+Note:
+- Minimal model to reach target: model-30-500.h5
+- Optimal models: model-30-500.h5
+
+4. Run following command to test the network based on the trained model
+
+$ rosrun turtlebot_ddpg ddpg_network_turtlebot3_amcl_fd_replay_human.py
+
+
+
+
