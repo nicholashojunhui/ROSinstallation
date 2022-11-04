@@ -15,7 +15,7 @@ $ cd ~/catkin_ws && catkin_make
 
 (A-2) Installing other SLAM packages for TB3 on Remote PC
 
-$ sudo apt-get install ros-noetic-frontier-exploration ros-kinetic-navigation-stage
+$ sudo apt-get install ros-noetic-frontier-exploration ros-noetic-navigation-stage
 
 ##############################################################################################
 ##############################################################################################
@@ -46,11 +46,11 @@ $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_autorace.git
 
 $ cd ~/catkin_ws && catkin_make
 
-$ sudo apt-get install ros-kinetic-image-transport ros-kinetic-cv-bridge ros-kinetic-vision-opencv python-opencv libopencv-dev ros-kinetic-image-proc
+$ sudo apt install ros-noetic-image-transport ros-noetic-cv-bridge ros-noetic-vision-opencv python3-opencv libopencv-dev ros-noetic-image-proc
 
 
 ####################################################################################
-Upgrading Gazebo to version 7.16
+Upgrading Gazebo to version 7.16 [ONLY APPLICABLE if your Gazebo is below v7.16]
 
 Follow the following steps to update your Gazebo to version 7.16.0:
 
