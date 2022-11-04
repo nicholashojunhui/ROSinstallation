@@ -1,0 +1,14 @@
+
+1. Change to the source space directory of the catkin workspace:
+
+$ cd ~/catkin_ws/src
+
+2. Git Clone the hrse package:
+
+$ git clone https://github.com/nicholashojunhui/hrse.git
+
+3. Build the packages in the catkin workspace:
+
+$ cd ~/catkin_ws && catkin_make
+
+4. Go to catkin_ws/src/hrse/src and make all python files executable

@@ -1,0 +1,24 @@
+Command Execution Sequence Instructions (for gesture_control.py)
+
+1. Launch Gazebo in TurtleBot3 World
+
+	$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+2. Run node that allows you to use finger gestures to control the TB3
+
+	$ rosrun hrse gesture_control.py
+
+*ensure that your python codes are in the src folder of your hrse package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x name_of_python_file.py)
+
+3. Adjust camera until the bounding box is within blue background
+
+4. Try the gesture control by changing your finger gestures into 1, 2, 3 or 4 as illustrated in the demo or pictures; 1, 2, 3, 4 are represented by the following controls:
+
+	1: Forward
+	2: Left (Counterclockwise)
+	3: Right (Clockwise)
+	4: Backwards
+ No Input: Brake
+
+

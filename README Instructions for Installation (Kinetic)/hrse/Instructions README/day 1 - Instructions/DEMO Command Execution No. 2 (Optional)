@@ -1,0 +1,25 @@
+Command Execution Sequence Instructions for Laser Scan DEMO
+
+1. Launch Gazebo in TurtleBot3 World
+
+	$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+2. Run node that send required data to your ThingSpeak Channel (use reference template to construct node)
+
+	$ rosrun hrse TS_demo2.py
+
+*ensure that your python codes are in the src folder of your hrse package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x TS_demo2.py)
+
+
+3. Check if your ThingSpeak Channel receives the data from your run node
+
+4. Move the TB3 around the map using the Teleop key node
+
+	$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+5. Observe the collected data in your ThingSpeak Channel. It should change as you move the TB3 around the map
+
+6. Once done, you can export your collected data in CSV
+
+

@@ -1,0 +1,28 @@
+Command Execution Sequence Instructions (for Project4.py)
+
+1. Launch Gazebo in TurtleBot3 World
+
+	$ roslaunch turtlebot3_gazebo turtlebot3_world.launch
+
+2. Edit the Project4_TEMPLATE.py (3 Sections to edit) to enable the TB3 to avoid obstacles and rename it as Project.py
+
+3. Run node that allows you to use finger gestures to control the TB3 while also enabling the TB3 to avoid obstacles
+
+	$ rosrun hrse Project4.py
+
+*ensure that your python codes are in the src folder of your hrse package
+*ensure you have given permissions to your python files (1. cd to directory; 2. chmod +x name_of_python_file.py)
+
+4. Adjust camera until the bounding box is within blue background
+
+5. Change your finger gestures into 1, 2, 3 or 4 as illustrated in the demo or pictures; 1, 2, 3, 4 are represented by the following controls:
+
+	1: Forward
+	2: Left (Counterclockwise)
+	3: Right (Clockwise)
+	4: Backwards
+ No Input: Brake
+
+6. Check if the node enables the TB3 to avoid obstacles when you went out of control
+
+
