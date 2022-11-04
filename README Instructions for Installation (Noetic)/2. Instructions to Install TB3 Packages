@@ -29,6 +29,8 @@ $ echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 We are using TurtleBot3 Waffle Pi model for our workshops; type following command to export this model:
 $ echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
 
+#########################################################################################################
+#########################################################################################################
 
 ***Ensure that catkin make runs successfully. Note that if catkin cannot work, run the
 following commands in the terminal window:
