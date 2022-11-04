@@ -14,7 +14,7 @@ $ sudo udevadm trigger
 
 $ sudo apt-get install libncurses5-dev:i386
 
-3. Extract the downloaded file to the desired folder and execute the installation file from the terminal. In this case, the example shown below makes the folder tools in the userís top folder (~/). This folder will act as the Arduino IDE folder.
+3. Extract the downloaded file to the desired folder and execute the installation file from the terminal. In this case, the example shown below makes the folder tools in the user‚Äôs top folder (~/). This folder will act as the Arduino IDE folder.
 
 $ cd ~/Desktop/arduino-1.8.13
 $ sudo ./install.sh
@@ -29,28 +29,35 @@ $ source ~/.bashrc
 
 https://raw.githubusercontent.com/ROBOTIS-GIT/OpenCR/master/arduino/opencr_release/package_opencr_index.json
 
-6. Click Tools then Board then Boards Manager. Type OpenCR into the textbox to find the OpenCR by ROBOTIS package. After it finds out, click Install. After the installation, ìINSTALLEDî will be appeared. See if OpenCR Board is now on the list of Tools then Board. Click this to import the OpenCR Board source.
+6. Click Tools then Board then Boards Manager. Type OpenCR into the textbox to find the OpenCR by ROBOTIS package. After it finds out, click Install. After the installation, ‚ÄúINSTALLED‚Äù will be appeared. See if OpenCR Board is now on the list of Tools then Board. Click this to import the OpenCR Board source.
 
 7. After programming with the Arduino IDE and uploading the program to the OpenCR, the OpenCR will be restarted and be reconnected. At the same moment, the modem-related packages of the Linux will send the AT command to manage the device. Thus indicates an connection error on the OpenCR, so this step should be done previously.
 
 $ sudo apt-get purge modemmanager
 
 ########################################################################################
+########################################################################################
 
 Processing:
 
-1. Copy, paste and extract in Desktop
+1. Download Proccessing from website:
+https://processing.org/download
 
-2. $ cd ~/Desktop/processing-3.5.4
+Alternatively, use the following direct link to download the zip file: 
+https://github.com/processing/processing/releases/download/processing-0270-3.5.4/processing-3.5.4-linux64.tgz
 
-3. ./install.sh
+2. Copy, paste and extract in Desktop
 
-4. Open Processing app; go to Tools then Add Tool, search ControlP5 under lib and install it
+3. $ cd ~/Desktop/processing-3.5.4
 
-5. $ cd ~/catkin_ws/src/ 
+4. ./install.sh
 
-6. $ git clone https://github.com/ROBOTIS-GIT/open_manipulator_processing.git
+5. Open Processing app; go to Tools then Add Tool, search ControlP5 under lib and install it
 
-7. Open Chain.pde
+6. $ cd ~/catkin_ws/src/ 
+
+7. $ git clone https://github.com/ROBOTIS-GIT/open_manipulator_processing.git
+
+8. Open Chain.pde
 
 
