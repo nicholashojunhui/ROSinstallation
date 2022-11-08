@@ -15,7 +15,7 @@ $ cd ~/catkin_ws && catkin_make
 
 (A-2) Installing other SLAM packages for TB3 on Remote PC
 
-$ sudo apt-get install ros-noetic-frontier-exploration ros-noetic-navigation-stage
+Nil.
 
 ##############################################################################################
 ##############################################################################################
