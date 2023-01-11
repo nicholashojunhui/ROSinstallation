@@ -58,3 +58,7 @@ In VirtualBox your VM should be showing as Powered Off, and the optical drive co
   
 ####################################################################################################################################################
 ####################################################################################################################################################
+
+To install wireless drivers (broadcom; dell PCs):
+1. sudo apt-get update
+2. sudo apt install broadcom-sta-dkms bcmwl-kernel-source
