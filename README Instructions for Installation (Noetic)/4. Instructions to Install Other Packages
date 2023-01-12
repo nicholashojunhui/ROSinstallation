@@ -49,15 +49,3 @@ $ cd ~/catkin_ws && catkin_make
 $ sudo apt install ros-noetic-image-transport ros-noetic-cv-bridge ros-noetic-vision-opencv python3-opencv libopencv-dev ros-noetic-image-proc
 
 
-####################################################################################
-Upgrading Gazebo to version 7.16 [ONLY APPLICABLE if your Gazebo is below v7.16]
-
-Follow the following steps to update your Gazebo to version 7.16.0:
-
-$ sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
-
-$ wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-
-$ sudo apt-get update
-
-$ sudo apt-get install gazebo7 -y
