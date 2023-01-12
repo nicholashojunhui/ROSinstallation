@@ -50,7 +50,7 @@ https://github.com/processing/processing/releases/download/processing-0270-3.5.4
 
 3. $ cd ~/Desktop/processing-3.5.4
 
-4. ./install.sh
+4. sudo ./install.sh
 
 5. Open Processing app; go to Tools then Add Tool, search ControlP5 under lib and install it
 
