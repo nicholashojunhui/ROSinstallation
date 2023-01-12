@@ -58,6 +58,8 @@ https://github.com/processing/processing/releases/download/processing-0270-3.5.4
 
 7. $ git clone https://github.com/ROBOTIS-GIT/open_manipulator_processing.git
 
-8. Open Chain.pde
+8. Copy and Paste GLContextlmpl.class file in following path: 
+
+9. Open Chain.pde
 
 
