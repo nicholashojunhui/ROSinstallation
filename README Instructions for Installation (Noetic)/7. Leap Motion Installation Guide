@@ -51,7 +51,8 @@ Note that this installation is for Leap Motion Controller to be used for Ubuntu 
    - LeapPython.so (under x64 folder)
    - libLeap.so (under x64 folder)
 
-11. Copy and paste these 3 files in your /home/issuser/catkin_ws/src/leap_motion/LeapSDK/lib. 
+11. Copy and paste these 3 files in your /home/issuser/catkin_ws/src/leap_motion/LeapSDK/lib
+      /usr/local/lib/python<version>/site-packages/. 
 
 12. Now you can try to open the Leap Motion GUI
 
