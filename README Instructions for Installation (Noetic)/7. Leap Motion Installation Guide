@@ -10,19 +10,23 @@ Note that this installation is for Leap Motion Controller to be used for Ubuntu 
 
 2. Once downloaded, unzip the zip file, Leap_Motion_SDK_Linux_2.3.1.tgz
 
-3a. Open terminal, change directory and run the following command:
+3. Install required package
+
+   $ sudo apt-get install libgl1-mesa-glx
+
+4a. Open terminal, change directory and run the following command:
 
    $ sudo dpkg --install Leap-2.3.1+31549-x64.deb
    
-3b. If you have an error during the above Linux installation, first uninstall the leap programme:
+4b. If you have an error during the above Linux installation, first uninstall the leap programme:
 
    $ sudo dpkg -r leap
 
-4. Type the following command:
+5. Type the following command:
 
    $ sudo nano /lib/systemd/system/leapd.service
    
-5. Copy and paste the below in the nano editor:
+6. Copy and paste the below in the nano editor:
 
    [Unit]
    Description=LeapMotion Daemon
@@ -33,31 +37,31 @@ Note that this installation is for Leap Motion Controller to be used for Ubuntu 
    [Install]
    WantedBy=multi-user.target
 
-6. After which, save contents (CTRL+O then ENTER), and exit (CTRL+X)
+7. After which, save contents (CTRL+O then ENTER), and exit (CTRL+X)
 
-7. Still using the terminal, execute the two commands from that same terminal:
+8. Still using the terminal, execute the two commands from that same terminal:
 
    $ sudo ln -s /lib/systemd/system/leapd.service /etc/systemd/system/leapd.service
    $ sudo systemctl daemon-reload
 
-8. All is right now and we can properly install. Open terminal, change directory and run the following command:
+9. All is right now and we can properly install. Open terminal, change directory and run the following command:
 
    $ sudo dpkg --install Leap-2.3.1+31549-x64.deb
 
-9. Ensure Step 8 is completed without errors first. Once done, go to the folder that was unzip in Step 2. Click on LeapSDK -> Lib.
+10. Ensure Step 8 is completed without errors first. Once done, go to the folder that was unzip in Step 2. Click on LeapSDK -> Lib.
 
    There are 3 files involved in the next step. They are:
    - Leap.py
    - LeapPython.so (under x64 folder)
    - libLeap.so (under x64 folder)
 
-10. Copy and paste these 3 files in your /usr/local/lib/python<version>/site-packages/. 
+11. Copy and paste these 3 files in your /home/issuser/catkin_ws/src/leap_motion/LeapSDK/lib. 
 
-11. Now you can try to open the Leap Motion GUI
+12. Now you can try to open the Leap Motion GUI
 
    $ LeapControlPanel
 
-12. If the daemon is unable to run, type the following to restart the leap programme and try again:
+13. If the daemon is unable to run, type the following to restart the leap programme and try again:
 
    $ sudo service leapd restart
    
