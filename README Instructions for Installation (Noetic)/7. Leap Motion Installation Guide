@@ -1,8 +1,4 @@
-Note that this installation is for Leap Motion Controller to be used for Ubuntu 16.04
-
-########################################################################
-####################### TO TEST in Ubuntu 20.04! #######################
-########################################################################
+Note that this installation is for Leap Motion Controller to be used for Ubuntu 20.04
 
 1. Go to the following weblink and download the SDK file (For ROS in Ubuntu, download the Linux version):
 
@@ -10,7 +6,7 @@ Note that this installation is for Leap Motion Controller to be used for Ubuntu 
 
 2. Once downloaded, unzip the zip file, Leap_Motion_SDK_Linux_2.3.1.tgz
 
-3. Install required package
+3. Install the required package
 
    $ sudo apt-get install libgl1-mesa-glx
 
