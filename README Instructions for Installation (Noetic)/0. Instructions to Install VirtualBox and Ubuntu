@@ -135,7 +135,6 @@ $ sudo pip3 install picamera
 
 To configure the Raspberry Pi to enable the camera module, open up the board configuration file with a text editor:
 $ sudo nano /boot/firmware/config.txt
-$ sudo nano /boot/config.txt
 
 Add the following line to enable the camera:
 start_x=1
