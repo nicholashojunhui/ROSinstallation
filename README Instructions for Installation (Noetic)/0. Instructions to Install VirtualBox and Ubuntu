@@ -78,3 +78,30 @@ $ cd /etc/netplan
 $ sudo nano 50-cloud-init.yaml
 
 2. Change 'WIFI_SSID' and 'WIFI_PASSWORD' to the correct ones
+
+####################################################################################################################################################
+####################################################################################################################################################
+
+OpenCR Setup
+
+1. Access TB3 PC via ssh:
+$ ssh ubuntu@192.168.XX.XX
+
+2. Install the required packages on the Raspberry Pi to upload the OpenCR firmware
+$ sudo dpkg --add-architecture armhf
+$ sudo apt-get update
+$ sudo apt-get install libc6:armhf
+
+3. Use waffle for the OPENCR_MODEL name. 
+$ export OPENCR_PORT=/dev/ttyACM0
+$ export OPENCR_MODEL=waffle_noetic
+$ rm -rf ./opencr_update.tar.bz2
+
+4. Download the firmware and loader, then extract the file.
+$ wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS1/latest/opencr_update.tar.bz2 
+$ tar -xvf opencr_update.tar.bz2 
+
+5. Upload firmware to the OpenCR. 
+$ cd ./opencr_update
+$ ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
+
