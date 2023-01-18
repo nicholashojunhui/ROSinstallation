@@ -112,6 +112,7 @@ Pi Camera Set up; on TB3 PC, run the commands:
 $ cd ~/catkin_ws/src
 $ git clone https://github.com/UbiquityRobotics/raspicam_node.git
 $ sudo apt-get install ros-kinetic-compressed-image-transport ros-kinetic-camera-info-manager
+$ sudo apt-get install ros-noetic-compressed-image-transport ros-noetic-camera-info-manager
 $ cd ~/catkin_ws && catkin_make
 
 ####################################################################################################################################################
