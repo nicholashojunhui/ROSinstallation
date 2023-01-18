@@ -127,10 +127,23 @@ $ sudo chmod 777 /dev/vchiq
 then:
 $ cd ~/catkin_ws && catkin_make
 
+#######################################
+###Do the following to enable camera###
+#######################################
+Picamera can be installed directly via pip:
+$ sudo pip3 install picamera
+
+To configure the Raspberry Pi to enable the camera module, open up the board configuration file with a text editor:
+$ sudo nano /boot/firmware/config.txt
+$ sudo nano /boot/config.txt
+
+Add the following line to enable the camera:
+start_x=1
+
 Test if camera is working:
 $ raspistill -v -o test.jpg
 
-If still error, run on TB3 PC:
+If still error, run on TB3 PC and try again:
 $ sudo apt-get update
 $ sudo apt-get upgrade
 
