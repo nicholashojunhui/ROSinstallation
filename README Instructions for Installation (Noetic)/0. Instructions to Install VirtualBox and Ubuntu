@@ -143,7 +143,7 @@ start_x=1
 Test if camera is working:
 $ raspistill -v -o test.jpg
 
-If still error, run on TB3 PC and try again:
+If still error, run the following commands on TB3 PC and try again:
 $ sudo apt-get update
 $ sudo apt-get upgrade
 
