@@ -1,3 +1,11 @@
+
+##################################################################################
+##################################################################################
+######################## ONLY CAN INSTALL FOR ROS KINETIC ########################
+######### LEAP SDK NOT SUPPORTED for PYTHON3 (CANNOT USE FOR ROS NOETIC) #########
+##################################################################################
+##################################################################################
+
 Note that this installation is for Leap Motion Controller to be used for Ubuntu 20.04
 
 1. Go to the following weblink and download the SDK file (For ROS in Ubuntu, download the Linux version):
@@ -51,8 +59,7 @@ Note that this installation is for Leap Motion Controller to be used for Ubuntu 
    - LeapPython.so (under x64 folder)
    - libLeap.so (under x64 folder)
 
-11. Copy and paste these 3 files in your /home/issuser/catkin_ws/src/leap_motion/LeapSDK/lib
-      /usr/local/lib/python<version>/site-packages/. 
+11. Copy and paste these 3 files in your /usr/local/lib/python<version>/site-packages/. 
 
 12. Now you can try to open the Leap Motion GUI
 
