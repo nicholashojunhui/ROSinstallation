@@ -117,6 +117,10 @@ $ cd ~/catkin_ws && catkin_make
 If encountered error due to diagnostics, try:
 $ sudo apt-get install ros-noetic-diagnostics
 
+OR If encountered error due to mmal libraries, try:
+$ sudo apt install libraspberrypi-bin libraspberrypi-dev 
+??? sudo apt install libraspberrypi-dev libraspberrypi0
+
 then:
 $ cd ~/catkin_ws && catkin_make
 
