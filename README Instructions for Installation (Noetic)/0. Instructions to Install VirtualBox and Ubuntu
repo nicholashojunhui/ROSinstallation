@@ -121,6 +121,9 @@ $ sudo apt-get install ros-noetic-diagnostics
 OR If encountered error due to mmal libraries, try:
 $ sudo apt install libraspberrypi-bin libraspberrypi-dev 
 
+OR If encountered error due to * failed to open vchiq instance
+$ sudo chmod 777 /dev/vchiq
+
 then:
 $ cd ~/catkin_ws && catkin_make
 
