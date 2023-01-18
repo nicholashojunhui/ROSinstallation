@@ -138,6 +138,7 @@ $ sudo nano /boot/firmware/config.txt
 
 Add the following line to enable the camera:
 start_x=1
+gpu_mem=128
 
 Test if camera is working:
 $ raspistill -v -o test.jpg
