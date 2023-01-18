@@ -130,9 +130,6 @@ $ cd ~/catkin_ws && catkin_make
 #######################################
 ###Do the following to enable camera###
 #######################################
-Picamera can be installed directly via pip:
-$ sudo pip3 install picamera
-
 To configure the Raspberry Pi to enable the camera module, open up the board configuration file with a text editor:
 $ sudo nano /boot/firmware/config.txt
 
