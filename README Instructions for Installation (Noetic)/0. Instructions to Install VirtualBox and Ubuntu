@@ -63,3 +63,18 @@ To install wireless drivers (broadcom; dell PCs):
 1. sudo apt-get update
 2. sudo apt install firmware-b43-installer
 3. sudo apt install broadcom-sta-dkms bcmwl-kernel-source
+
+####################################################################################################################################################
+####################################################################################################################################################
+
+Configure the WiFi Network Setting for SD card for TB3
+
+1(A). If plugged in the Dell PC, run the following commands in terminal: 
+$ cd /media/$USER/writable/etc/netplan
+$ sudo nano 50-cloud-init.yaml
+
+1(B). If access directly, run the following commands in terminal:
+$ cd /etc/netplan
+$ sudo nano 50-cloud-init.yaml
+
+2. Change 'WIFI_SSID' and 'WIFI_PASSWORD' to the correct ones
