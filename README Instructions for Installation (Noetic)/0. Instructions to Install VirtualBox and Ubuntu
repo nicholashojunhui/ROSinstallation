@@ -114,5 +114,8 @@ $ git clone https://github.com/UbiquityRobotics/raspicam_node.git
 $ sudo apt-get install ros-noetic-compressed-image-transport ros-noetic-camera-info-manager
 $ cd ~/catkin_ws && catkin_make
 
+If encountered error due to diagnostics, try:
+$ sudo apt-get install ros-noetic-diagnostics
+
 ####################################################################################################################################################
 ####################################################################################################################################################
