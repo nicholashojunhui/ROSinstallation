@@ -111,7 +111,8 @@ $ ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
 Pi Camera Set up; on TB3 PC, run the commands:
 $ cd ~/catkin_ws/src
 $ git clone https://github.com/UbiquityRobotics/raspicam_node.git
-$ sudo apt-get install ros-noetic-compressed-image-transport ros-noetic-camera-info-manager
+$ sudo apt install libraspberrypi-dev libraspberrypi0 libpigpiod-if-dev
+$ sudo apt-get install ros-noetic-compressed-image-transport ros-noetic-camera-info-manager ros-noetic-diagnostic-updater
 $ cd ~/catkin_ws && catkin_make
 
 If encountered error due to diagnostics, try:
