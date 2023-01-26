@@ -19,9 +19,9 @@ $ sudo nano /etc/dhcpcd.conf
 
 - Add the following lines
 interface wlan0
-static ip_address=192.168.8.XXX/24
-static routers=192.168.8.1
-static domain_name_servers=192.168.8.1
+static ip_address=192.168.0.XXX/24
+static routers=192.168.0.1
+static domain_name_servers=192.168.0.1
 
 - Restart to adopt the newly assigned static IP address in the network:
 $ sudo reboot
