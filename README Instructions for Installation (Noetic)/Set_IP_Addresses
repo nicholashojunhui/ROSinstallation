@@ -12,23 +12,15 @@ For Slave IPs (Raspberry Pi in TB3)
 $ cd /etc/netplan
 $ sudo nano 50-cloud-init.yaml
 
-2. 
+2. Ensure 'WIFI_SSID' and 'WIFI_PASSWORD' are the correct ones
 
-- check whether DHCPCD is already activated using the following command:
-$ sudo service dhcpcd status
+3. Under dhcp4, change to 'no'
 
-- In case it’s not, activate DHCPCD as follows:
-$ sudo service dhcpcd start
-$ sudo systemctl enable dhcpcd
+4. Add the following under wlan0, below 'dhcp4: no':
 
-- Edit the activated DHCPCDs, start by opening the configuration file /etc/dhcpcd.confand running the following command:
-$ sudo nano /etc/dhcpcd.conf
+      dhcp4: no
+      addresses: [192.168.0.XXX/24]
+      gateway4: 192.168.0.50
+      nameservers:
+        addresses: [8.8.8.8,8.8.4.4]
 
-- Add the following lines
-interface wlan0
-static ip_address=192.168.0.XXX/24
-static routers=192.168.0.1
-static domain_name_servers=192.168.0.1
-
-- Restart to adopt the newly assigned static IP address in the network:
-$ sudo reboot
