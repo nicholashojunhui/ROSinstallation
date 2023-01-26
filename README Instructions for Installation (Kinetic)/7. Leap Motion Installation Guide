@@ -40,20 +40,11 @@ Note that this installation is for Leap Motion Controller to be used for Ubuntu 
 
    $ sudo dpkg --install Leap-2.3.1+31549-x64.deb
 
-9. Ensure Step 8 is completed without errors first. Once done, go to the folder that was unzip in Step 2. Click on LeapSDK -> Lib.
-
-   There are 3 files involved in the next step. They are:
-   - Leap.py
-   - LeapPython.so (under x64 folder)
-   - libLeap.so (under x64 folder)
-
-10. Copy and paste these 3 files in your /usr/local/lib/python<version>/site-packages/. 
-
-11. Now you can try to open the Leap Motion GUI
+9. Now you can try to open the Leap Motion GUI
 
    $ LeapControlPanel
 
-12. If the daemon is unable to run, type the following to restart the leap programme and try again:
+10. If the daemon is unable to run, type the following to restart the leap programme and try again:
 
    $ sudo service leapd restart
    
