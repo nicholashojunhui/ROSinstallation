@@ -7,6 +7,13 @@ For Master IPs (PCs; Ubuntu)
 
 
 For Slave IPs (Raspberry Pi in TB3)
+
+1. Run the following commands in terminal:
+$ cd /etc/netplan
+$ sudo nano 50-cloud-init.yaml
+
+2. 
+
 - check whether DHCPCD is already activated using the following command:
 $ sudo service dhcpcd status
 
