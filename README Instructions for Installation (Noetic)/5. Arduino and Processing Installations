@@ -59,7 +59,15 @@ https://github.com/processing/processing/releases/download/processing-0270-3.5.4
 7. $ git clone https://github.com/ROBOTIS-GIT/open_manipulator_processing.git
 
 8. Copy and Paste GLContextlmpl.class file in following path: 
+processing-X.X.X/core/library/jogl-all.jar/jogamp/opengl
 
 9. Open Chain.pde
 
+10. If encounter the following error: "Profile GL4bc is not available on X11GraphicsDevice", edit Chain.pde under settings functions:
+void settings() { 
+  System.setProperty("jogl.disable.openglcore", "false");
+  size(900, 900, OPENGL);
+}
 
+If still cannot, change "size(900, 900, OPENGL)" to:
+"size(400, 400, P3D)"
