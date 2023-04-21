@@ -127,6 +127,12 @@ $ sudo chmod 777 /dev/vchiq
 then:
 $ cd ~/catkin_ws && catkin_make
 
+If following error appears:
+ERROR: cannot launch node of type [cv_camera/cv_camera_node]: cv_camera
+
+Run the below command:
+$ sudo apt install ros-noetic-cv-camera
+
 #######################################
 ###Do the following to enable camera###
 #######################################
