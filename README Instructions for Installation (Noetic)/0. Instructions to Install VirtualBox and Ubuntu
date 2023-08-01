@@ -152,3 +152,19 @@ $ sudo apt-get upgrade
 
 ####################################################################################################################################################
 ####################################################################################################################################################
+If you have an existing image to clone from for an existing SD card to a new one, type the following commands:
+(A) Plug in existing SD card to your computer and check which drive it belongs to [either sdb or sdc]. Next enter:
+$ ls /dev/sdb*
+
+(B) Execute the following command to copy the whole disk:
+$ sudo dd if=/dev/sdb of=sdimage.img bs=4M
+
+Note: The system may appear to be hang but it is not. Wait patiently until the copying success notifications come out.
+
+(C) Plug in the new SD Card and execute the following:
+$ sudo dd if=sdimage.img of=/dev/sdb bs=4M
+
+Note: Same thing, the system may appear to be hang but it is not. Wait patiently until the copying success notifications come out.
+
+####################################################################################################################################################
+####################################################################################################################################################
