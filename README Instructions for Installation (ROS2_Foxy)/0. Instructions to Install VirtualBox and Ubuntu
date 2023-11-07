@@ -1,0 +1,247 @@
+Getting started with Ubuntu 20.04 in VirtualBox (Only for those without dual boot!)
+*Note that for this course, we will be using ROS Noetic. Hence, please take note that it is strictly required to install Ubuntu version 20.04, as this version 
+can better support ROS2 Foxy.
+
+####################################################################################################################################################
+####################################################################################################################################################
+
+VirtualBox installation
+  1.	First we need to download VirtualBox (latest version; to be safe) from  https://www.virtualbox.org/wiki 
+  2.	Run the executable and follow the prompts to complete the installation.
+
+####################################################################################################################################################
+####################################################################################################################################################
+
+Create an Ubuntu virtual machine
+  1.	Download the latest Ubuntu release from http://releases.ubuntu.com/20.04/?_ga=2.245247622.286617492.1585822024-1634746839.1585822024. 
+Download Ubuntu version 20.04.5 LTS (Focal Fossa); click on 64-bit PC (AMD64) desktop image to download desktop image
+  2.	Open VirtualBox and click New
+  3.	Type the Name for the virtual machine, like Ubuntu 20.04. VirtualBox will try to predict the Type and Version based on the name you enter. 
+      Otherwise, select:
+      •	Type: Linux
+      •	Version: Ubuntu (64-bit)
+      and click Next.
+  4.	Next we need to specify how much memory to allocate the virtual machine. According to the Ubuntu system requirements we need 2GB, 
+      but I’d recommend more if your host can handle it. Basically the higher you can set the memory without severely impacting your host machine, 
+      the better the performance of the guest machine. If you’re not sure, stick with 2048MB (i.e. 2 GB)
+  5.	On the Hardware screen select Create a virtual hard disk now and click Create
+  6.	Accept the default option VDI for Hard disk file type and click Next
+  7.	Next we are prompted for Storage on physical hard disk. The options are Dynamically allocated and Fixed size. 
+      We’ll use the default of Dynamically allocated. Click Next
+  8.	Choose the hard disk size and storage location. The Ubuntu system requirements recommend 25GB; change to 25GB. 
+      Remember, we choose Dynamically allocated as our storage option in the last step, so we won’t consume all this disk space immediately. 
+      Rather, VirtualBox will allocate it as required, up to the maximum 25GB we specified. Click Create
+  9.	The wizard will finish and we are returned to the main VirtualBox window. Click Settings
+  10.	In the left pane select Storage, then in the right select the CD icon with the word Empty beside it
+  11.	Under Attributes click the CD icon and select Choose a disk file and browse to the downloaded file ubuntu-16.04.6-desktop-amd64.iso
+  12.	Click OK to close the Settings dialog window. The virtual machine should now be ready to start
+
+####################################################################################################################################################
+####################################################################################################################################################
+
+Install Ubuntu
+In VirtualBox your VM should be showing as Powered Off, and the optical drive configured to point to the Ubuntu ISO file we downloaded previously.
+  1.	In VirtualBox, click Start. VirtualBox will launch a new window with the vm and boot from the iso
+  2.	Click Start and you will be taken to an installation window
+  3.	Click Install Ubuntu
+  4.	Select Download updates while installing Ubuntu and click Continue
+  5.	On the next screen accept the default of Erase disk and install Ubuntu and click Install Now
+  6.	You will be prompted with a warning saying the changes will be written to disk. Click Continue
+  7.	Select your timezone and click Continue
+  8.	Select your keyboard layout. I accepted the default of English (US) and click Continue
+  9.	Enter a username and password, then click Continue
+  10.	The Ubuntu installation may take several minutes to run
+  11.	When the installation is finished you will be prompted to restart. Save and close anything else you may have open and click Restart Now
+  12.	When the vm reboots, press Enter in the vm to proceed
+  13.	If all went well the VM should boot to the Ubuntu login screen. Enter your password to continue
+  14.	Ubuntu should run normally in the VirtualBox environment. If everything is far too small, you can adjust the screen by selecting View > Scaled Mode
+  
+####################################################################################################################################################
+####################################################################################################################################################
+
+To install wireless drivers (broadcom; dell PCs):
+1. sudo apt-get update
+2. sudo apt install firmware-b43-installer
+3. sudo apt install broadcom-sta-dkms bcmwl-kernel-source
+
+
+####################################################################################################################################################
+####################################################################################################################################################
+###############################################################SBC SETUP############################################################################
+####################################################################################################################################################
+####################################################################################################################################################
+
+####################################################################################################################################################
+####################################################################################################################################################
+
+Configure the WiFi Network Setting for SD card for TB3
+
+1(A). If plugged in the Dell PC, run the following commands in terminal: 
+$ cd /media/$USER/writable/etc/netplan
+$ sudo nano 50-cloud-init.yaml
+
+1(B). If access directly, run the following commands in terminal:
+$ cd /etc/netplan
+$ sudo nano 50-cloud-init.yaml
+
+2. Change 'WIFI_SSID' and 'WIFI_PASSWORD' to the correct ones
+
+####################################################################################################################################################
+####################################################################################################################################################
+
+ROS2 Network Configuration
+
+In ROS2 DDS communication, ROS_DOMAIN_ID must be matched between Remote PC and TurtleBot3 for communication under the same network environment.
+The default ROS Domain ID for TurtleBot3 is set to 30 in the .bashrc file.
+
+Modify the ID number to avoid any conflict when there are identical ID in the same network.
+
+$ ROS_DOMAIN_ID=XX #TURTLEBOT3
+
+Match the correct number between the robot and PC machine.
+
+####################################################################################################################################################
+####################################################################################################################################################
+
+NEW LDS-02 Configuration
+
+Please follow the instructions below on the SBC (Raspberry Pi) of TurtleBot3.
+
+1. Install the LDS-02 driver and update TurtleBot3 package 
+$ sudo apt update
+$ sudo apt install libudev-dev
+$ cd ~/turtlebot3_ws/src
+$ git clone -b ros2-devel https://github.com/ROBOTIS-GIT/ld08_driver.git
+$ cd ~/turtlebot3_ws/src/turtlebot3 && git pull
+$ rm -r turtlebot3_cartographer turtlebot3_navigation2
+$ cd ~/turtlebot3_ws && colcon build --symlink-install
+
+2. Export the LDS_MODEL to the bashrc file. Depending on your LDS model, use LDS-01 or LDS-02. 
+$ echo 'export LDS_MODEL=LDS-02' >> ~/.bashrc
+$ source ~/.bashrc
+
+####################################################################################################################################################
+####################################################################################################################################################
+
+Install packages for TurtleBot3 Manipulation in SBC SD Card:
+
+$ cd ~/turtlebot3_ws/src/
+
+$ git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3_manipulation.git
+
+$ cd ~/turtlebot3_ws && colcon build --symlink-install
+
+####################################################################################################################################################
+####################################################################################################################################################
+
+####################################################################################################################################################
+####################################################################################################################################################
+#############################################################OPENCR SETUP###########################################################################
+####################################################################################################################################################
+####################################################################################################################################################
+
+OpenCR Setup
+
+0. Connect the OpenCR to the Rasbperry Pi using the micro USB cable.
+
+1. Access TB3 PC via ssh:
+$ ssh ubuntu@192.168.XX.XX
+
+2. Install the required packages on the Raspberry Pi to upload the OpenCR firmware
+$ sudo dpkg --add-architecture armhf
+$ sudo apt update
+$ sudo apt install libc6:armhf
+
+3. Use waffle for the OPENCR_MODEL name. 
+$ export OPENCR_PORT=/dev/ttyACM0
+$ export OPENCR_MODEL=waffle
+$ rm -rf ./opencr_update.tar.bz2
+
+4. Download the firmware and loader, then extract the file.
+$ wget https://github.com/ROBOTIS-GIT/OpenCR-Binaries/raw/master/turtlebot3/ROS2/latest/opencr_update.tar.bz2
+$ tar -xvf ./opencr_update.tar.bz2
+
+5. Upload firmware to the OpenCR. 
+$ cd ~/opencr_update
+$ ./update.sh $OPENCR_PORT $OPENCR_MODEL.opencr
+
+####################################################################################################################################################
+####################################################################################################################################################
+
+
+####################################################################################################################################################
+####################################################################################################################################################
+############################################################PI CAMERA SETUP#########################################################################
+####################################################################################################################################################
+####################################################################################################################################################
+
+Pi Camera Set up; on TB3 PC, run the commands:
+$ cd ~/turtlebot3_ws/src/
+$ git clone https://github.com/UbiquityRobotics/raspicam_node.git
+$ sudo apt install libraspberrypi-dev libraspberrypi0 libpigpiod-if-dev
+$ sudo apt-get install ros-foxy-image-transport-plugins ros-foxy-compressed-image-transport ros-foxy-image-transport ros-foxy-cv-bridge ros-foxy-vision-opencv python3-opencv libopencv-dev ros-foxy-image-proc ros-foxy-camera-info-manager ros-foxy-diagnostic-updater
+$ cd ~/turtlebot3_ws && colcon build --symlink-install
+
+If encountered error due to diagnostics, try:
+$ sudo apt-get install ros-foxy-diagnostics
+
+OR If encountered error due to mmal libraries, try:
+$ sudo apt install libraspberrypi-bin libraspberrypi-dev 
+
+OR If encountered error due to * failed to open vchiq instance
+$ sudo chmod 777 /dev/vchiq
+
+then:
+$ cd ~/turtlebot3_ws && colcon build --symlink-install
+
+If following error appears:
+ERROR: cannot launch node of type [cv_camera/cv_camera_node]: cv_camera
+
+Run the below command:
+$ sudo apt install ros-foxy-cv-camera
+
+#######################################
+###Do the following to enable camera###
+#######################################
+To configure the Raspberry Pi to enable the camera module, open up the board configuration file with a text editor:
+$ sudo nano /boot/firmware/config.txt
+
+Add the following line to enable the camera:
+start_x=1
+gpu_mem=128
+
+Test if camera is working:
+$ raspistill -v -o test.jpg
+
+If still got error or unable to detect, run the following commands on TB3 PC and try again:
+$ sudo apt-get update
+$ sudo apt-get upgrade
+
+
+####################################################################################################################################################
+####################################################################################################################################################
+
+####################################################################################################################################################
+####################################################################################################################################################
+############################################################CLONING SD Card#########################################################################
+####################################################################################################################################################
+####################################################################################################################################################
+
+####################################################################################################################################################
+####################################################################################################################################################
+If you have an existing image to clone from for an existing SD card to a new one, type the following commands:
+(A) Plug in existing SD card to your computer and check which drive it belongs to [either sdb or sdc]. Next enter:
+$ ls /dev/sdb*
+
+(B) Execute the following command to copy the whole disk:
+$ sudo dd if=/dev/sdb of=sdimage.img bs=4M
+
+Note: The system may appear to be hang but it is not. Wait patiently until the copying success notifications come out.
+
+(C) Plug in the new SD Card and execute the following:
+$ sudo dd if=sdimage.img of=/dev/sdb bs=4M
+
+Note: Same thing, the system may appear to be hang but it is not. Wait patiently until the copying success notifications come out.
+
+####################################################################################################################################################
+####################################################################################################################################################

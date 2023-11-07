@@ -1,0 +1,33 @@
+
+Instructions for Other Packages Setup
+
+The next step is to install other necessary packages on Remote PC:
+
+##############################################################################################
+##############################################################################################
+(A) Installing Simulation Packages for TB3 on Remote PC
+
+$ cd ~/turtlebot3_ws/src/
+
+$ git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+
+$ cd ~/turtlebot3_ws && colcon build --symlink-install
+
+
+##############################################################################################
+##############################################################################################
+
+(B) Installing Manipulation Packages for TB3 on Remote PC
+
+$ sudo apt install ros-foxy-dynamixel-sdk ros-foxy-ros2-control ros-foxy-ros2-controllers ros-foxy-gripper-controllers ros-foxy-moveit
+
+$ cd ~/turtlebot3_ws/src/
+
+$ git clone -b foxy-devel https://github.com/ROBOTIS-GIT/turtlebot3_manipulation.git
+
+$ cd ~/turtlebot3_ws && colcon build --symlink-install
+
+##############################################################################################
+##############################################################################################
+
+

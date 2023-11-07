@@ -1,0 +1,36 @@
+
+##################################################
+Test ROS:
+
+Open new terminal and run turtlesim_node in the turtlesim package:
+$ ros2 run turtlesim turtlesim_node
+
+Open new terminal and run turtle_teleop_key node in the turtlesim package:
+$ ros2 run turtlesim turtle_teleop_key
+
+***If the above cannot run, run the following command to install:
+$ sudo apt install ros-foxy-turtlesim
+
+###########################################################################
+Test TB3:
+
+First, launch Gazebo in TurtleBot3 World:
+$ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+
+Second, launch SLAM node in a new terminal:
+$ ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
+
+Third, launch teleop node in a new terminal:
+$ ros2 run turtlebot3_teleop teleop_keyboard
+
+###########################################################################
+Test TB3 with OM:
+
+First, launch Gazebo in TurtleBot3 World:
+$ ros2 launch turtlebot3_manipulation_bringup gazebo.launch.py
+
+Second, launch servo server node of the MoveIt in a new terminal:
+$ ros2 launch turtlebot3_manipulation_moveit_config servo.launch.py
+
+Third, launch teleop node in a new terminal:
+$ ros2 run turtlebot3_manipulation_teleop turtlebot3_manipulation_teleop

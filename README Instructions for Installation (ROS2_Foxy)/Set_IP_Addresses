@@ -1,0 +1,25 @@
+For Master IPs (PCs; Ubuntu)
+- Connect wifi and go to "Edit Connections"
+- Set IP address: 192.168.0.XXX
+- Set Netmask: 24
+- Set Gateway: 192.168.0.50
+- Set DNS servers as: 8.8.8.8
+
+
+For Slave IPs (Raspberry Pi in TB3)
+
+1. Run the following commands in terminal:
+$ cd /etc/netplan
+$ sudo nano 50-cloud-init.yaml
+
+2. Ensure 'WIFI_SSID' and 'WIFI_PASSWORD' are the correct ones
+
+3. Under dhcp4, change to 'no'
+
+4. Add the following under wlan0, below 'dhcp4: no':
+      dhcp4: no
+      addresses: [192.168.0.XXX/24]
+      gateway4: 192.168.0.50
+      nameservers:
+        addresses: [8.8.8.8,8.8.4.4]
+
