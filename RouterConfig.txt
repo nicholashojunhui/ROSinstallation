@@ -1,0 +1,12 @@
+Router Config Steps:
+
+1. Attach LAN cable
+
+2. Login to gateway http://192.168.0.1
+- username: root
+- password: 13579!Lab
+
+3.Go Network -> Wireless
+- Look for antenna 'MediaTek MT7615E 802.11bgn'
+- Client is input -> USB dongle device
+- Accesspoint is output -> issrobots
