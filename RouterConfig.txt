@@ -2,7 +2,7 @@ Router Config Steps:
 
 1. Attach LAN cable
 
-2. Login to gateway http://192.168.0.1
+2. Login to gateway http://192.168.0.100
 - username: root
 - password: XXXXXXX
 
