@@ -13,4 +13,4 @@ Router Config Steps:
 
 **** IMPORTANT ****
 If devices unable to communicate with one another, try log in platform and reset the network:
-Network -> Interfaces -> LAN -> Click "Restart" button
+Network -> Interfaces -> LAN/WANWIFI/WWAN -> Click "Restart" button
