@@ -4,7 +4,7 @@ Router Config Steps:
 
 2. Login to gateway http://192.168.0.1
 - username: root
-- password: 13579!Lab
+- password: XXXXXXX
 
 3.Go Network -> Wireless
 - Look for antenna 'MediaTek MT7615E 802.11bgn'
