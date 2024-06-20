@@ -10,3 +10,7 @@ Router Config Steps:
 - Look for antenna 'MediaTek MT7615E 802.11bgn'
 - Client is input -> USB dongle device
 - Accesspoint is output -> issrobots
+
+**** IMPORTANT ****
+If devices unable to communicate with one another, try log in platform and reset the network:
+Network -> Interfaces -> LAN -> Click "Restart" button
